@@ -1,0 +1,28 @@
+	¿Qué son las estrategias de despliegue?
+
+Se puede definir como la opción de modificar o actualizar una determinada aplicación, siendo su objetivo principal es poder realizar estas actualizaciones de una manera ágil y fiable, buscando evitar los periodos de inactividad para que el uso de dicha aplicación no se vea   afectada.
+Una buena estrategia de despliegue debe poseer estas 6 prácticas para asegurar una correcta transición del servicio a desplegar
+
+control de versiones: puede ser un repositorio git en el cual se mantenga un control de los cambios realizados sobre el servicio
+
+revisión de código: sistema de supervisión de los cambios realizados para poder controlar las características y funcionalidades que se incorporan al servicio con la finalidad de tener la certeza de que tenga un correcto funcionamiento
+
+Integración continua: una variedad de procesos los cuales permiten gestionar la calidad y seguridad del código, detectar vulnerabilidades, probar la capacidad de carga, construir empaquetar y testear. Pueden ser todos los procesos que me aseguren la calidad y el correcto funcionamiento de mi servicio
+
+automatización de despliegue: algún proceso que me permita desplegar sin intervención manual las nuevas características incorporadas al servicio
+
+supervisión de los desplegados: sistema de monitoreo que me asegure que mi servicio está funcionando de manera óptima.
+
+¿Cuántas y cuáles son los tipos de estrategias de despliegue que existen?
+
+Rolling upgrade:  consiste en ir actualizando uno a uno los componentes, lo que genera que su despliegue ser muy lento tanto en ejecución como en su rollback, en general es acompañada de otra estrategia 
+
+Blue/green:   Esta estrategia consiste en que se trabaja con dos versiones la Blue(la  versión nueva) y la Green( la versión estable ), consiste en que mientras los usuarios usan la versión Green, la versión blue se usa  para pruebas y evaluaciones hasta  el momento que esté lista, en donde los usuarios pasan de a usar la versión blue.
+
+Red/black: es similar a la estrategia Blue/Green con la diferencia que se va implementando pequeñas versión black(versión estable) a la nueva versión, dependiendo del comportamiento se va realizando mayores desvió o implementaciones  de estas pequeña versiones hasta posteriormente  implementar en su totalidad, sin dejar la versión black en línea 
+
+Dark Launcher: se realiza un despliegue en paralelo a la versión estable con la peculiaridad de duplicar el tráfico para ver cómo se comporta la nueva versión con este tráfico duplicado para posteriormente realizar un redireccionamiento parcial del trafico
+
+Canary Release:  se va desplegando en función del tiempo y el comportamiento de la nueva versión a desplegar 
+
+Recreate:  consiste en eliminar la versión antigua de la aplicación con el fin de desarrollar instancias para la siguiente versión y que puede funcionar de manera adecuada, esta necesita un periodo de inactivo.
